@@ -1,4 +1,4 @@
-## Kelompok Let's Larp
+## Kelompok : Let's Larp
 
 - Muhammad Zaki - 103022400141
 
