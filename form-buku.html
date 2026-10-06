@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add and Edit Book</title>
+</head>
+<body>
+
+  <header>
+    <h1>Perpustakaan Umum</h1>
+    <nav aria-label="Navigasi utama">
+      <a href="index.html">Beranda</a> |
+      <a href="form-buku.html">Tambah Buku</a> |
+      <a href="detail-buku.html">Detail Buku</a>
+    </nav>
+    <hr>
+  </header>
+
+  <main>
+    <article>
+      <h2>Form Tambah / Edit Buku</h2>
+      <p>Isi data buku dengan lengkap. Kolom bertanda * wajib diisi.</p>
+
+      <form action="index.html" method="post">
+        <fieldset>
+          <legend>Data Buku</legend>
+
+          <p>
+            <label for="judul">Judul *</label><br>
+            <input type="text" id="judul" name="judul" required>
+          </p>
+
+          <p>
+            <label for="penulis">Penulis *</label><br>
+            <input type="text" id="penulis" name="penulis" required>
+          </p>
+
+          <p>
+            <label for="tanggal">Tanggal Terbit *</label><br>
+            <input type="date" id="tanggal" name="tanggal" required>
+          </p>
+
+          <p>
+            <label for="kategori">Kategori</label><br>
+            <select id="kategori" name="kategori">
+              <option value="">-- Pilih kategori --</option>
+              <option value="fiksi">Fiksi</option>
+              <option value="nonfiksi">Non-Fiksi</option>
+              <option value="sains">Sains</option>
+              <option value="sejarah">Sejarah</option>
+              <option value="anak">Anak-anak</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="rak">Lokasi Rak *</label><br>
+            <input type="text" id="rak" name="rak" placeholder="Contoh: Rak B-12, Lantai 2" required>
+          </p>
+
+          <p>
+            <label for="sampul">Tautan Gambar Sampul</label><br>
+            <input type="url" id="sampul" name="sampul">
+          </p>
+
+          <p>
+            <label for="ebook">Tautan E-book</label><br>
+            <input type="url" id="ebook" name="ebook">
+          </p>
+
+          <p>
+            <label for="sinopsis">Sinopsis</label><br>
+            <textarea id="sinopsis" name="sinopsis" rows="5" cols="40"></textarea>
+          </p>
+        </fieldset>
+
+        <p>
+          <button type="submit">Simpan</button>
+          <button type="reset">Reset</button>
+          <a href="index.html">Batal</a>
+        </p>
+      </form>
+    </article>
+  </main>
+
+  <footer>
+    <hr>
+    <p>&copy; 2026 Perpustakaan Umum</p>
+  </footer>
+
+</body>
+</html>
