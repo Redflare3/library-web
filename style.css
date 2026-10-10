@@ -1,0 +1,262 @@
+/* ===== Variabel warna (identitas visual) ===== */
+:root {
+  --warna-utama: #1f4e5f;     /* biru teal tua: header, judul, tombol */
+  --warna-aksen: #2a7f8f;     /* link */
+  --warna-latar: #cfe5ea;     /* background halaman: teal muda */
+  --warna-kartu: #ffffff;     /* background konten */
+  --warna-teks: #22313a;      /* teks utama */
+  --warna-garis: #d3dde2;     /* border tabel */
+  --warna-sorot: #f4a62a;     /* aksen hangat: menu aktif, tombol, garis judul */
+  --warna-sorot-tua: #d98c0f; /* hover aksen */
+  --warna-sorot-muda: #fdf1d8;/* background label & hover baris */
+  --warna-sorot-teks: #5c3a00;/* teks di atas aksen muda */
+}
+
+/* ===== Dasar ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--warna-teks);
+  background-color: var(--warna-latar);
+}
+
+/* ===== Judul ===== */
+h1, h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0 0 12px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: var(--warna-utama);
+  display: table;
+  margin: 0 auto 16px;
+  padding-bottom: 6px;
+  border-bottom: 3px solid var(--warna-sorot);
+  text-align: center;
+}
+
+p {
+  font-size: 1rem;
+}
+
+/* ===== Header & navigasi ===== */
+header {
+  background-color: var(--warna-utama);
+  color: #ffffff;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between; /* judul di kiri, menu di kanan */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  position: sticky;               /* navbar tetap terlihat saat scroll */
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+  font-size: 1.4rem;
+  margin: 0;
+  padding: 14px 0;
+}
+
+/* Styling list (ul) untuk menu navigasi */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 4px;
+}
+
+nav li a {
+  display: block;
+  padding: 8px 16px;
+  color: #dbe9ed;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 20px;
+}
+
+nav li a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+/* Menu halaman yang sedang dibuka */
+nav li a[aria-current="page"] {
+  background-color: var(--warna-sorot);
+  color: #1b2a30;
+}
+
+/* ===== Konten utama ===== */
+.container {
+  max-width: 960px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+article {
+  background-color: var(--warna-kartu);
+  padding: 24px;
+  border: 1px solid var(--warna-garis);
+  border-radius: 6px;
+}
+
+article > p {
+  text-align: center;
+}
+
+/* ===== Tabel ===== */
+.table-wrap {
+  overflow-x: auto; /* tabel bisa digeser di layar kecil */
+  margin: 16px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+caption {
+  font-weight: 600;
+  padding-bottom: 8px;
+  text-align: left;
+  color: var(--warna-utama);
+}
+
+th, td {
+  border: 1px solid var(--warna-garis);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+th {
+  background-color: var(--warna-utama);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* No, sampul, dan aksi di tengah */
+th:nth-child(1), td:nth-child(1),
+th:nth-child(2), td:nth-child(2),
+th:nth-child(7), td:nth-child(7) {
+  text-align: center;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f1f8fa;
+}
+
+tbody tr:hover {
+  background-color: var(--warna-sorot-muda);
+}
+
+td img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 3px;
+}
+
+/* ===== Link ===== */
+a {
+  color: var(--warna-aksen);
+}
+
+/* ===== Span: label lokasi rak ===== */
+.rak {
+  display: inline-block;
+  background-color: var(--warna-sorot-muda);
+  color: var(--warna-sorot-teks);
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* ===== Div: tombol tambah buku ===== */
+.aksi-tambah {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.aksi-tambah a {
+  display: inline-block;
+  background-color: var(--warna-sorot);
+  color: #1b2a30;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+.aksi-tambah a:hover {
+  background-color: var(--warna-sorot-tua);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #dbe9ed;
+  background-color: var(--warna-utama);
+  padding: 16px;
+  margin-top: 32px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ===== Responsive: layar <= 600px ===== */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    gap: 0;
+    position: static;
+  }
+
+  header h1 {
+    text-align: center;
+    padding: 16px;
+  }
+
+  /* Navigasi berubah dari horizontal ke vertikal */
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  nav li a {
+    text-align: center;
+    padding: 12px 16px;
+    border-radius: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  article {
+    padding: 16px;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+}
