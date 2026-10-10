@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book Detail</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="detail-page">
+
+  <header class="site-header">
+    <div class="container">
+      <h1>Perpustakaan Umum</h1>
+      <nav aria-label="Navigasi utama">
+        <ul class="nav-list">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="form-buku.html">Tambah Buku</a></li>
+          <li><a href="detail-buku.html" aria-current="page">Detail Buku</a></li>
+        </ul>
+      </nav>
+      <hr>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="detail-layout">
+      <div class="detail-cover">
+        <figure>
+          <img src="img/LP.jpg" alt="Sampul buku Laskar Pelangi" ">
+          <figcaption>Sampul buku Laskar Pelangi</figcaption>
+        </figure>
+      </div>
+
+      <div class="detail-info">
+        <h2>Laskar Pelangi</h2>
+
+        <div class="tags">
+          <span class="tag">Fiksi Indonesia</span>
+          <span class="tag"><time datetime="2005">2005</time></span>
+        </div>
+
+        <p class="meta">
+          <span class="meta-label">Penulis</span> <span class="meta-value">Andrea Hirata</span>
+          <span class="dot">&middot;</span>
+          <span class="meta-label">Terbit</span> <span class="meta-value"><time datetime="2005-09-01">1 September 2005</time></span>
+        </p>
+
+        <p class="meta">
+          <span class="meta-label">Lokasi Rak</span> <span class="meta-value">Rak B-12, Lantai 2 (Fiksi Indonesia)</span>
+        </p>
+
+        <h3>Sinopsis</h3>
+        <p class="sinopsis">Kisah sepuluh anak dari keluarga sederhana di Belitung yang bersekolah di SD Muhammadiyah dengan segala keterbatasannya, namun tetap semangat meraih mimpi.</p>
+
+        <div class="aksi">
+          <form action="" method="get" target="_blank">
+            <button type="submit" class="btn-utama">&#9654; Baca E-book</button>
+          </form>
+          <a href="form-buku.html" class="btn-biasa">Edit data buku</a>
+          <a href="index.html" class="btn-biasa">Kembali ke daftar</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <hr>
+      <p>&copy; 2026 Perpustakaan Umum</p>
+    </div>
+  </footer>
+
+</body>
+</html>

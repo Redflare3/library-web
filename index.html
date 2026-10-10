@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Perpustakaan Umum</h1>
+      <nav aria-label="Navigasi utama">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Beranda</a></li>
+          <li><a href="form-buku.html">Tambah Buku</a></li>
+          <li><a href="detail-buku.html">Detail Buku</a></li>
+        </ul>
+      </nav>
+      <hr>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="card">
+      <h2>Daftar Koleksi Buku</h2>
+      <p>Berikut daftar buku yang tersedia di perpustakaan. Pilih judul untuk melihat detail buku.</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Koleksi buku perpustakaan</caption>
+          <thead>
+            <tr>
+              <th scope="col" class="col-center">No</th>
+              <th scope="col">Sampul</th>
+              <th scope="col">Judul</th>
+              <th scope="col">Penulis</th>
+              <th scope="col">Tanggal Terbit</th>
+              <th scope="col">Lokasi Rak</th>
+              <th scope="col">Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-center">1</td>
+              <td><img src="img/LP.jpg" alt="Sampul buku Laskar Pelangi" width="60" height="90"></td>
+              <td><a href="detail-buku.html">Laskar Pelangi</a></td>
+              <td>Andrea Hirata</td>
+              <td><time datetime="2005-09-01">1 September 2005</time></td>
+              <td><span class="badge">Rak B-12, Lantai 2</span></td>
+              <td><a href="form-buku.html">Edit</a></td>
+            </tr>
+            <tr>
+              <td class="col-center">2</td>
+              <td><img src="img/BM.jpg" alt="Sampul buku Bumi Manusia" width="60" height="90"></td>
+              <td><a href="detail-buku.html">Bumi Manusia</a></td>
+              <td>Pramoedya Ananta Toer</td>
+              <td><time datetime="1980-08-25">25 Agustus 1980</time></td>
+              <td><span class="badge">Rak B-14, Lantai 2</span></td>
+              <td><a href="form-buku.html">Edit</a></td>
+            </tr>
+            <tr>
+              <td class="col-center">3</td>
+              <td><img src="img/N5M.jpg" alt="Sampul buku Negeri 5 Menara" width="60" height="90"></td>
+              <td><a href="detail-buku.html">Negeri 5 Menara</a></td>
+              <td>Ahmad Fuadi</td>
+              <td><time datetime="2009-07-01">1 Juli 2009</time></td>
+              <td><span class="badge">Rak B-15, Lantai 2</span></td>
+              <td><a href="form-buku.html">Edit</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><a href="form-buku.html">+ Tambah buku baru</a></p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <hr>
+      <p>&copy; 2026 Perpustakaan Umum</p>
+    </div>
+  </footer>
+
+</body>
+</html>
