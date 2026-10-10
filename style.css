@@ -1,18 +1,16 @@
-/* ===== Variabel warna (identitas visual) ===== */
 :root {
-  --warna-utama: #1f4e5f;     /* biru teal tua: header, judul, tombol */
-  --warna-aksen: #2a7f8f;     /* link */
-  --warna-latar: #cfe5ea;     /* background halaman: teal muda */
-  --warna-kartu: #ffffff;     /* background konten */
-  --warna-teks: #22313a;      /* teks utama */
-  --warna-garis: #d3dde2;     /* border tabel */
-  --warna-sorot: #f4a62a;     /* aksen hangat: menu aktif, tombol, garis judul */
-  --warna-sorot-tua: #d98c0f; /* hover aksen */
-  --warna-sorot-muda: #fdf1d8;/* background label & hover baris */
-  --warna-sorot-teks: #5c3a00;/* teks di atas aksen muda */
+  --warna-utama: #1f4e5f;
+  --warna-aksen: #2a7f8f;
+  --warna-latar: #cfe5ea;
+  --warna-kartu: #ffffff;
+  --warna-teks: #22313a;
+  --warna-garis: #d3dde2;
+  --warna-sorot: #f4a62a;
+  --warna-sorot-tua: #d98c0f;
+  --warna-sorot-muda: #fdf1d8;
+  --warna-sorot-teks: #5c3a00;
 }
 
-/* ===== Dasar ===== */
 * {
   box-sizing: border-box;
 }
@@ -27,7 +25,6 @@ body {
   background-color: var(--warna-latar);
 }
 
-/* ===== Judul ===== */
 h1, h2 {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 700;
@@ -52,17 +49,16 @@ p {
   font-size: 1rem;
 }
 
-/* ===== Header & navigasi ===== */
 header {
   background-color: var(--warna-utama);
   color: #ffffff;
   padding: 0 24px;
   display: flex;
-  justify-content: space-between; /* judul di kiri, menu di kanan */
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
-  position: sticky;               /* navbar tetap terlihat saat scroll */
+  position: sticky;
   top: 0;
   z-index: 10;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
@@ -74,7 +70,6 @@ header h1 {
   padding: 14px 0;
 }
 
-/* Styling list (ul) untuk menu navigasi */
 nav ul {
   list-style: none;
   margin: 0;
@@ -98,13 +93,11 @@ nav li a:hover {
   color: #ffffff;
 }
 
-/* Menu halaman yang sedang dibuka */
 nav li a[aria-current="page"] {
   background-color: var(--warna-sorot);
   color: #1b2a30;
 }
 
-/* ===== Konten utama ===== */
 .container {
   max-width: 960px;
   margin: 24px auto;
@@ -122,9 +115,8 @@ article > p {
   text-align: center;
 }
 
-/* ===== Tabel ===== */
 .table-wrap {
-  overflow-x: auto; /* tabel bisa digeser di layar kecil */
+  overflow-x: auto;
   margin: 16px 0;
 }
 
@@ -154,7 +146,6 @@ th {
   font-weight: 600;
 }
 
-/* No, sampul, dan aksi di tengah */
 th:nth-child(1), td:nth-child(1),
 th:nth-child(2), td:nth-child(2),
 th:nth-child(7), td:nth-child(7) {
@@ -175,12 +166,10 @@ td img {
   border-radius: 3px;
 }
 
-/* ===== Link ===== */
 a {
   color: var(--warna-aksen);
 }
 
-/* ===== Span: label lokasi rak ===== */
 .rak {
   display: inline-block;
   background-color: var(--warna-sorot-muda);
@@ -190,7 +179,6 @@ a {
   border-radius: 4px;
 }
 
-/* ===== Div: tombol tambah buku ===== */
 .aksi-tambah {
   text-align: center;
   margin-top: 8px;
@@ -210,7 +198,6 @@ a {
   background-color: var(--warna-sorot-tua);
 }
 
-/* ===== Footer ===== */
 footer {
   text-align: center;
   font-size: 0.875rem;
@@ -224,7 +211,6 @@ footer p {
   margin: 0;
 }
 
-/* ===== Responsive: layar <= 600px ===== */
 @media (max-width: 600px) {
   header {
     flex-direction: column;
@@ -239,7 +225,6 @@ footer p {
     padding: 16px;
   }
 
-  /* Navigasi berubah dari horizontal ke vertikal */
   nav ul {
     flex-direction: column;
     gap: 0;
