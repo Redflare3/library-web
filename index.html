@@ -3,84 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Book List</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Dashboard - Perpustakaan Umum</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/app.js" defer></script>
 </head>
-<body>
-  <header class="site-header">
-    <div class="container">
-      <h1>Perpustakaan Umum</h1>
-      <nav aria-label="Navigasi utama">
-        <ul class="nav-list">
-          <li><a href="index.html" aria-current="page">Beranda</a></li>
-          <li><a href="form-buku.html">Tambah Buku</a></li>
-          <li><a href="detail-buku.html">Detail Buku</a></li>
+<body class="bg-slate-950 text-slate-300 min-h-screen flex flex-col">
+  <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-10">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between" aria-label="Navigasi utama">
+      <a href="index.html" class="text-xl font-bold text-slate-100">Perpustakaan Umum</a>
+      <button id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu"
+              class="md:hidden p-2 rounded-lg text-slate-300 hover:bg-slate-800">
+        <span class="sr-only">Buka menu</span>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <div id="nav-menu" class="hidden w-full md:w-auto md:block mt-3 md:mt-0">
+        <ul class="flex flex-col md:flex-row gap-1">
+          <li><a href="index.html" aria-current="page" class="block px-4 py-2 rounded-lg font-semibold bg-slate-950 text-sky-400">Dashboard</a></li>
+          <li><a href="daftar-buku.html" class="block px-4 py-2 rounded-lg font-semibold text-slate-300 hover:bg-slate-800 hover:text-sky-400">Daftar Buku</a></li>
+          <li><a href="form-buku.html" class="block px-4 py-2 rounded-lg font-semibold text-slate-300 hover:bg-slate-800 hover:text-sky-400">Tambah Buku</a></li>
+          <li><a href="detail-buku.html" class="block px-4 py-2 rounded-lg font-semibold text-slate-300 hover:bg-slate-800 hover:text-sky-400">Detail Buku</a></li>
         </ul>
-      </nav>
-      <hr>
-    </div>
+      </div>
+    </nav>
   </header>
 
-  <main class="container">
-    <article class="card">
-      <h2>Daftar Koleksi Buku</h2>
-      <p>Berikut daftar buku yang tersedia di perpustakaan. Pilih judul untuk melihat detail buku.</p>
-
-      <div class="table-wrap">
-        <table>
-          <caption>Koleksi buku perpustakaan</caption>
-          <thead>
-            <tr>
-              <th scope="col" class="col-center">No</th>
-              <th scope="col">Sampul</th>
-              <th scope="col">Judul</th>
-              <th scope="col">Penulis</th>
-              <th scope="col">Tanggal Terbit</th>
-              <th scope="col">Lokasi Rak</th>
-              <th scope="col">Aksi</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="col-center">1</td>
-              <td><img src="img/LP.jpg" alt="Sampul buku Laskar Pelangi" width="60" height="90"></td>
-              <td><a href="detail-buku.html">Laskar Pelangi</a></td>
-              <td>Andrea Hirata</td>
-              <td><time datetime="2005-09-01">1 September 2005</time></td>
-              <td><span class="badge">Rak B-12, Lantai 2</span></td>
-              <td><a href="form-buku.html">Edit</a></td>
-            </tr>
-            <tr>
-              <td class="col-center">2</td>
-              <td><img src="img/BM.jpg" alt="Sampul buku Bumi Manusia" width="60" height="90"></td>
-              <td><a href="detail-buku.html">Bumi Manusia</a></td>
-              <td>Pramoedya Ananta Toer</td>
-              <td><time datetime="1980-08-25">25 Agustus 1980</time></td>
-              <td><span class="badge">Rak B-14, Lantai 2</span></td>
-              <td><a href="form-buku.html">Edit</a></td>
-            </tr>
-            <tr>
-              <td class="col-center">3</td>
-              <td><img src="img/N5M.jpg" alt="Sampul buku Negeri 5 Menara" width="60" height="90"></td>
-              <td><a href="detail-buku.html">Negeri 5 Menara</a></td>
-              <td>Ahmad Fuadi</td>
-              <td><time datetime="2009-07-01">1 Juli 2009</time></td>
-              <td><span class="badge">Rak B-15, Lantai 2</span></td>
-              <td><a href="form-buku.html">Edit</a></td>
-            </tr>
-          </tbody>
-        </table>
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-8">
+    <h2 class="text-2xl md:text-3xl font-bold text-slate-100">Dashboard</h2>
+    <p class="mt-1 text-slate-400">Ringkasan koleksi dan aktivitas perpustakaan.</p>
+    <section class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" aria-label="Statistik">
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
+        <p class="text-sm text-slate-400">Total Buku</p>
+        <p class="mt-2 text-3xl font-bold text-slate-100">3</p>
       </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
+        <p class="text-sm text-slate-400">Tersedia</p>
+        <p class="mt-2 text-3xl font-bold text-emerald-400">2</p>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
+        <p class="text-sm text-slate-400">Dipinjam</p>
+        <p class="mt-2 text-3xl font-bold text-amber-400">1</p>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
+        <p class="text-sm text-slate-400">Anggota</p>
+        <p class="mt-2 text-3xl font-bold text-sky-400">128</p>
+      </div>
+    </section>
+    <div class="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-      <p><a href="form-buku.html">+ Tambah buku baru</a></p>
-    </article>
+      <section class="lg:col-span-2 bg-slate-900 border border-slate-800 rounded-xl p-5">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-lg font-bold text-slate-100">Buku Terbaru</h3>
+          <a href="daftar-buku.html" class="text-sm font-semibold text-sky-400 hover:text-sky-300">Lihat semua</a>
+        </div>
+        <ul class="divide-y divide-slate-800">
+          <li class="py-3 flex items-center gap-4">
+            <img src="img/LP.jpg" alt="Sampul buku Laskar Pelangi" class="w-12 h-16 object-cover rounded-md">
+            <div class="flex-1 min-w-0">
+              <a href="detail-buku.html" class="font-semibold text-slate-100 hover:text-sky-400">Laskar Pelangi</a>
+              <p class="text-sm text-slate-400 truncate">Andrea Hirata</p>
+            </div>
+            <span class="hidden sm:inline-block text-xs font-semibold bg-slate-800 text-slate-300 px-3 py-1 rounded-md">Rak B-12</span>
+          </li>
+          <li class="py-3 flex items-center gap-4">
+            <img src="img/BM.jpg" alt="Sampul buku Bumi Manusia" class="w-12 h-16 object-cover rounded-md">
+            <div class="flex-1 min-w-0">
+              <a href="detail-buku.html" class="font-semibold text-slate-100 hover:text-sky-400">Bumi Manusia</a>
+              <p class="text-sm text-slate-400 truncate">Pramoedya Ananta Toer</p>
+            </div>
+            <span class="hidden sm:inline-block text-xs font-semibold bg-slate-800 text-slate-300 px-3 py-1 rounded-md">Rak B-14</span>
+          </li>
+          <li class="py-3 flex items-center gap-4">
+            <img src="img/N5M.jpg" alt="Sampul buku Negeri 5 Menara" class="w-12 h-16 object-cover rounded-md">
+            <div class="flex-1 min-w-0">
+              <a href="detail-buku.html" class="font-semibold text-slate-100 hover:text-sky-400">Negeri 5 Menara</a>
+              <p class="text-sm text-slate-400 truncate">Ahmad Fuadi</p>
+            </div>
+            <span class="hidden sm:inline-block text-xs font-semibold bg-slate-800 text-slate-300 px-3 py-1 rounded-md">Rak B-15</span>
+          </li>
+        </ul>
+      </section>
+
+      <aside class="space-y-6">
+        <section class="bg-slate-900 border border-slate-800 rounded-xl p-5">
+          <h3 class="text-lg font-bold text-slate-100 mb-4">Aksi Cepat</h3>
+          <div class="flex flex-col gap-3">
+            <a href="form-buku.html" class="text-center bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 rounded-xl">+ Tambah Buku</a>
+            <a href="daftar-buku.html" class="text-center bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-3 rounded-xl">Lihat Koleksi</a>
+          </div>
+        </section>
+
+        <section class="bg-slate-900 border border-slate-800 rounded-xl p-5">
+          <h3 class="text-lg font-bold text-slate-100 mb-4">Kategori</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs font-semibold bg-slate-800 text-slate-300 px-3 py-1 rounded-md">Fiksi</span>
+            <span class="text-xs font-semibold bg-slate-800 text-slate-300 px-3 py-1 rounded-md">Non-Fiksi</span>
+            <span class="text-xs font-semibold bg-slate-800 text-slate-300 px-3 py-1 rounded-md">Sains</span>
+            <span class="text-xs font-semibold bg-slate-800 text-slate-300 px-3 py-1 rounded-md">Sejarah</span>
+            <span class="text-xs font-semibold bg-slate-800 text-slate-300 px-3 py-1 rounded-md">Anak-anak</span>
+          </div>
+        </section>
+      </aside>
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <hr>
-      <p>&copy; 2026 Perpustakaan Umum</p>
-    </div>
+  <footer class="bg-slate-900 border-t border-slate-800 text-center text-slate-400 py-4">
+    <p>&copy; 2026 Perpustakaan Umum</p>
   </footer>
 
 </body>
