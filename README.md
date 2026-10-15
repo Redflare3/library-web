@@ -1,6 +1,6 @@
 # Index.html
-<img width="1919" height="625" alt="image" src="https://github.com/user-attachments/assets/36a9ea2d-0ec2-4aad-bbcc-ef838e1467cc" />
-<img width="606" height="961" alt="image" src="https://github.com/user-attachments/assets/56f3c207-1c08-4f82-a282-670e34e26a0e" />
+<img width="199" height="65" alt="image" src="https://github.com/user-attachments/assets/36a9ea2d-0ec2-4aad-bbcc-ef838e1467cc" />
+<img width="60" height="96" alt="image" src="https://github.com/user-attachments/assets/56f3c207-1c08-4f82-a282-670e34e26a0e" />
 
 # daftar-buku.html
 <img width="951" height="574" alt="image" src="https://github.com/user-attachments/assets/efe34e9c-6b90-4f3f-b0b4-0645683e4152" />
