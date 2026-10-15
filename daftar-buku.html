@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daftar Buku - Perpustakaan Umum</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body class="bg-slate-950 text-slate-300 min-h-screen flex flex-col">
+
+  <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-10">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between" aria-label="Navigasi utama">
+      <a href="index.html" class="text-xl font-bold text-slate-100"> Perpustakaan Umum</a>
+      <button id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu"
+              class="md:hidden p-2 rounded-lg text-slate-300 hover:bg-slate-800">
+        <span class="sr-only">Buka menu</span>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <div id="nav-menu" class="hidden w-full md:w-auto md:block mt-3 md:mt-0">
+        <ul class="flex flex-col md:flex-row gap-1">
+          <li><a href="index.html" class="block px-4 py-2 rounded-lg font-semibold text-slate-300 hover:bg-slate-800 hover:text-sky-400">Dashboard</a></li>
+          <li><a href="daftar-buku.html" aria-current="page" class="block px-4 py-2 rounded-lg font-semibold bg-slate-950 text-sky-400">Daftar Buku</a></li>
+          <li><a href="form-buku.html" class="block px-4 py-2 rounded-lg font-semibold text-slate-300 hover:bg-slate-800 hover:text-sky-400">Tambah Buku</a></li>
+          <li><a href="detail-buku.html" class="block px-4 py-2 rounded-lg font-semibold text-slate-300 hover:bg-slate-800 hover:text-sky-400">Detail Buku</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-8">
+    <article class="bg-slate-900 border border-slate-800 rounded-xl p-5 md:p-6">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-100">Daftar Koleksi Buku</h2>
+          <p class="mt-1 text-slate-400">Pilih judul untuk melihat detail buku.</p>
+        </div>
+        <a href="form-buku.html" class="text-center bg-sky-500 hover:bg-sky-600 text-white font-bold px-5 py-3 rounded-xl">+ Tambah Buku</a>
+      </div>
+
+      <div class="mt-5">
+        <label for="cari" class="sr-only">Cari buku</label>
+        <input type="search" id="cari" placeholder="Cari judul atau penulis..."
+               class="w-full sm:max-w-sm px-3 py-2 bg-slate-950 border border-slate-700 rounded-lg text-slate-100 focus:outline-none focus:border-sky-500">
+      </div>
+
+      <div class="mt-5 overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <caption class="sr-only">Koleksi buku perpustakaan</caption>
+          <thead>
+            <tr class="bg-slate-800 text-slate-100">
+              <th scope="col" class="p-3 text-center">No</th>
+              <th scope="col" class="p-3">Sampul</th>
+              <th scope="col" class="p-3">Judul</th>
+              <th scope="col" class="p-3 hidden md:table-cell">Penulis</th>
+              <th scope="col" class="p-3 hidden lg:table-cell">Tanggal Terbit</th>
+              <th scope="col" class="p-3 hidden sm:table-cell">Lokasi Rak</th>
+              <th scope="col" class="p-3">Aksi</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800">
+            <tr class="hover:bg-slate-800/50">
+              <td class="p-3 text-center">1</td>
+              <td class="p-3"><img src="img/LP.jpg" alt="Sampul buku Laskar Pelangi" class="w-[60px] h-[90px] object-cover rounded-md"></td>
+              <td class="p-3">
+                <a href="detail-buku.html" class="font-bold text-slate-100 hover:text-sky-400">Laskar Pelangi</a>
+                <p class="md:hidden text-sm text-slate-400">Andrea Hirata</p>
+              </td>
+              <td class="p-3 hidden md:table-cell">Andrea Hirata</td>
+              <td class="p-3 hidden lg:table-cell"><time datetime="2005-09-01">1 September 2005</time></td>
+              <td class="p-3 hidden sm:table-cell"><span class="text-xs font-bold bg-slate-800 text-slate-300 px-3 py-1 rounded-md whitespace-nowrap">Rak B-12, Lantai 2</span></td>
+              <td class="p-3"><a href="form-buku.html" class="font-bold text-sky-400 hover:text-sky-300">Edit</a></td>
+            </tr>
+            <tr class="hover:bg-slate-800/50">
+              <td class="p-3 text-center">2</td>
+              <td class="p-3"><img src="img/BM.jpg" alt="Sampul buku Bumi Manusia" class="w-[60px] h-[90px] object-cover rounded-md"></td>
+              <td class="p-3">
+                <a href="detail-buku.html" class="font-bold text-slate-100 hover:text-sky-400">Bumi Manusia</a>
+                <p class="md:hidden text-sm text-slate-400">Pramoedya Ananta Toer</p>
+              </td>
+              <td class="p-3 hidden md:table-cell">Pramoedya Ananta Toer</td>
+              <td class="p-3 hidden lg:table-cell"><time datetime="1980-08-25">25 Agustus 1980</time></td>
+              <td class="p-3 hidden sm:table-cell"><span class="text-xs font-bold bg-slate-800 text-slate-300 px-3 py-1 rounded-md whitespace-nowrap">Rak B-14, Lantai 2</span></td>
+              <td class="p-3"><a href="form-buku.html" class="font-bold text-sky-400 hover:text-sky-300">Edit</a></td>
+            </tr>
+            <tr class="hover:bg-slate-800/50">
+              <td class="p-3 text-center">3</td>
+              <td class="p-3"><img src="img/N5M.jpg" alt="Sampul buku Negeri 5 Menara" class="w-[60px] h-[90px] object-cover rounded-md"></td>
+              <td class="p-3">
+                <a href="detail-buku.html" class="font-bold text-slate-100 hover:text-sky-400">Negeri 5 Menara</a>
+                <p class="md:hidden text-sm text-slate-400">Ahmad Fuadi</p>
+              </td>
+              <td class="p-3 hidden md:table-cell">Ahmad Fuadi</td>
+              <td class="p-3 hidden lg:table-cell"><time datetime="2009-07-01">1 Juli 2009</time></td>
+              <td class="p-3 hidden sm:table-cell"><span class="text-xs font-bold bg-slate-800 text-slate-300 px-3 py-1 rounded-md whitespace-nowrap">Rak B-15, Lantai 2</span></td>
+              <td class="p-3"><a href="form-buku.html" class="font-bold text-sky-400 hover:text-sky-300">Edit</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+  </main>
+
+  <footer class="bg-slate-900 border-t border-slate-800 text-center text-slate-400 py-4">
+    <p>&copy; 2026 Perpustakaan Umum</p>
+  </footer>
+
+</body>
+</html>

@@ -3,71 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Book Detail</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Detail Buku - Perpustakaan Umum</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/app.js" defer></script>
 </head>
-<body class="detail-page">
+<body class="bg-slate-950 text-slate-300 min-h-screen flex flex-col">
 
-  <header class="site-header">
-    <div class="container">
-      <h1>Perpustakaan Umum</h1>
-      <nav aria-label="Navigasi utama">
-        <ul class="nav-list">
-          <li><a href="index.html">Beranda</a></li>
-          <li><a href="form-buku.html">Tambah Buku</a></li>
-          <li><a href="detail-buku.html" aria-current="page">Detail Buku</a></li>
+  <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-10">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between" aria-label="Navigasi utama">
+      <a href="index.html" class="text-xl font-bold text-slate-100">Perpustakaan Umum</a>
+      <button id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu"
+              class="md:hidden p-2 rounded-lg text-slate-300 hover:bg-slate-800">
+        <span class="sr-only">Buka menu</span>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <div id="nav-menu" class="hidden w-full md:w-auto md:block mt-3 md:mt-0">
+        <ul class="flex flex-col md:flex-row gap-1">
+          <li><a href="index.html" class="block px-4 py-2 rounded-lg font-semibold text-slate-300 hover:bg-slate-800 hover:text-sky-400">Dashboard</a></li>
+          <li><a href="daftar-buku.html" class="block px-4 py-2 rounded-lg font-semibold text-slate-300 hover:bg-slate-800 hover:text-sky-400">Daftar Buku</a></li>
+          <li><a href="form-buku.html" class="block px-4 py-2 rounded-lg font-semibold text-slate-300 hover:bg-slate-800 hover:text-sky-400">Tambah Buku</a></li>
+          <li><a href="detail-buku.html" aria-current="page" class="block px-4 py-2 rounded-lg font-semibold bg-slate-950 text-sky-400">Detail Buku</a></li>
         </ul>
-      </nav>
-      <hr>
-    </div>
+      </div>
+    </nav>
   </header>
 
-  <main class="container">
-    <article class="detail-layout">
-      <div class="detail-cover">
-        <figure>
-          <img src="img/LP.jpg" alt="Sampul buku Laskar Pelangi" ">
-          <figcaption>Sampul buku Laskar Pelangi</figcaption>
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-8">
+    <article class="flex flex-col md:flex-row gap-8 md:gap-10">
+      <div class="md:w-72 md:shrink-0">
+        <figure class="text-center">
+          <img src="img/LP.jpg" alt="Sampul buku Laskar Pelangi" class="w-full max-w-xs mx-auto md:max-w-none rounded-2xl shadow-2xl shadow-black/60">
+          <figcaption class="mt-3 text-sm italic text-slate-500">Sampul buku Laskar Pelangi</figcaption>
         </figure>
       </div>
 
-      <div class="detail-info">
-        <h2>Laskar Pelangi</h2>
+      <div class="flex-1">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-100">Laskar Pelangi</h2>
 
-        <div class="tags">
-          <span class="tag">Fiksi Indonesia</span>
-          <span class="tag"><time datetime="2005">2005</time></span>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="text-xs font-bold bg-slate-800 text-slate-300 px-3 py-1 rounded-md">Fiksi Indonesia</span>
+          <span class="text-xs font-bold bg-slate-800 text-slate-300 px-3 py-1 rounded-md"><time datetime="2005">2005</time></span>
         </div>
 
-        <p class="meta">
-          <span class="meta-label">Penulis</span> <span class="meta-value">Andrea Hirata</span>
-          <span class="dot">&middot;</span>
-          <span class="meta-label">Terbit</span> <span class="meta-value"><time datetime="2005-09-01">1 September 2005</time></span>
+        <p class="mt-5 text-slate-400">
+          <span>Penulis</span> <span class="font-bold text-slate-300">Andrea Hirata</span>
+          <span class="mx-2">&middot;</span>
+          <span>Terbit</span> <span class="font-bold text-slate-300"><time datetime="2005-09-01">1 September 2005</time></span>
         </p>
 
-        <p class="meta">
-          <span class="meta-label">Lokasi Rak</span> <span class="meta-value">Rak B-12, Lantai 2 (Fiksi Indonesia)</span>
+        <p class="mt-2 text-slate-400">
+          <span>Lokasi Rak</span> <span class="font-bold text-slate-300">Rak B-12, Lantai 2 (Fiksi Indonesia)</span>
         </p>
 
-        <h3>Sinopsis</h3>
-        <p class="sinopsis">Kisah sepuluh anak dari keluarga sederhana di Belitung yang bersekolah di SD Muhammadiyah dengan segala keterbatasannya, namun tetap semangat meraih mimpi.</p>
+        <h3 class="mt-6 mb-1 font-bold text-slate-400">Sinopsis</h3>
+        <p class="leading-8 text-slate-400">Kisah sepuluh anak dari keluarga sederhana di Belitung yang bersekolah di SD Muhammadiyah dengan segala keterbatasannya, namun tetap semangat meraih mimpi.</p>
 
-        <div class="aksi">
-          <form action="" method="get" target="_blank">
-            <button type="submit" class="btn-utama">&#9654; Baca E-book</button>
-          </form>
-          <a href="form-buku.html" class="btn-biasa">Edit data buku</a>
-          <a href="index.html" class="btn-biasa">Kembali ke daftar</a>
+        <div class="mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-3">
+          <a href="#" target="_blank" rel="noopener" class="text-center bg-sky-500 hover:bg-sky-600 text-white font-bold text-lg px-8 py-4 rounded-xl">&#9654; Baca E-book</a>
+          <a href="form-buku.html" class="text-center bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold px-6 py-4 rounded-xl">Edit data buku</a>
+          <a href="daftar-buku.html" class="text-center bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold px-6 py-4 rounded-xl">Kembali ke daftar</a>
         </div>
       </div>
     </article>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <hr>
-      <p>&copy; 2026 Perpustakaan Umum</p>
-    </div>
+  <footer class="bg-slate-900 border-t border-slate-800 text-center text-slate-400 py-4">
+    <p>&copy; 2026 Perpustakaan Umum</p>
   </footer>
 
 </body>
